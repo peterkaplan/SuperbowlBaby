@@ -23,9 +23,11 @@ p {
 }
 .column{
 	width: 30%;
-			    margin: auto;
+	 margin: auto;
 
-		text-align: center;
+	text-align: center;
+	padding-bottom: 30px;
+
 }
 
 label{
@@ -34,14 +36,14 @@ label{
 }
 
 .vertical-center {
-    position: absolute;
-  top: 50%;
+   position: absolute;
+  top: 37%;
   left:50%;
   transform: translate(-50%,-50%);
 }
 
 .find {
-	padding-top: 50px;
+	margin: auto;
 }
 #footer {
   position: fixed;

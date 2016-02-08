@@ -52,8 +52,5 @@ label{
 	margin: auto;
 }
 #footer {
-  position: fixed;
-  bottom: 5px;
-  left: 44%;
-  text-align: center;
+
 }

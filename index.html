@@ -22,6 +22,17 @@
   </script>
 </head>
 <body>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
   <div class="container vertical-center">
      <h1>Are You a Super Bowl Baby?</h1>
      <img id="loader" src="public/ajax-loader.gif">
@@ -34,7 +45,9 @@
         <h2 id = "yes">YES!</h2>
         <h3> You're a football baby!</h3>
         <h3>The <span id="team"></span> won in <span id="date"></span></h3>
-                <button type="button" class="btn btn-info btn-lg" id="try_again">Try Again</button>
+                <button type="button" class="btn btn-info btn-lg" class="try_again">Try Again</button>
+              </br>
+                <div class="fb-share-button" data-href="https://amiasuperbowlbaby.com" data-layout="button_count"></div>
 
       </div>
 
@@ -44,7 +57,9 @@
         <h2 id = "no">AWW... </h2>
         <h3>You're not a Superbowl baby :(</h3>
         <h3 id="not_reason"></h3>
-        <button type="button" class="btn btn-info btn-lg" id="try_again">Try Again</button>
+        <button type="button" class="btn btn-info btn-lg" class="try_again">Try Again</button>
+
+        <div class="fb-share-button" data-href="https://amiasuperbowlbaby.com" data-layout="button_count"></div>
      </div>
 
 

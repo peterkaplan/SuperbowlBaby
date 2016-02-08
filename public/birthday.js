@@ -18,7 +18,7 @@ $(function() {
     }
     });
 
-    $("#try_again").click(function() {
+    $(".try_again").click(function() {
         $("#not_fb_baby").hide();
         $(".info-container").show(300);
     });

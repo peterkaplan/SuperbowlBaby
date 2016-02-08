@@ -17,11 +17,15 @@ $(function() {
         $("#go").click();
     }
     });
-    $("#go").click(function() {
 
+    $("#try_again").click(function() {
+        $("#not_fb_baby").hide();
+        $(".info-container").show(300);
+    });
+
+    $("#go").click(function() {
         if($("#month").val() > 12 || $("#month").val() < 1){
             $("#month").select();
-
             return;
         }
 
@@ -40,13 +44,12 @@ $(function() {
         $("#loader").show();
         $("#loader").css("display", "block");
 
-
-
         var data = {
 
             year: $("#year").val(),
             month: $("#month").val(),
-            team: $(".team_select").val()
+            team: $(".team_select").val(),
+            day: $("#day").val()
         };
         $.post("/check", data, function(resp) {
             resp = JSON.parse(resp);
@@ -57,11 +60,11 @@ $(function() {
                 $("#team").html(resp.team);
                 $("#date").html(resp.date);
                 $("#fb_baby").show(300);
-
             }
             else {
                 // not a football baby :(
                 $("#not_fb_baby").show(300);
+                $("#not_reason").html(resp.reason);
             }
         });
     });

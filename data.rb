@@ -1,3 +1,5 @@
+require 'date'
+
 data = [
     {
         "winner_name": "Green Bay Packers",
@@ -213,29 +215,41 @@ def check_date(data)
 
     if not winner_names.include? team
         # the team never won, not a super bowl baby
-        puts "never won"
+        not_baby[:reason] = "The #{team} have never even won a Super Bowl. 😢"
         return not_baby
     end
 
     birth_year_data = years_data[data["year"]]
 
     if birth_year_data.nil?
-        puts "no birth data"
+        not_baby[:reason] = "There was no Super Bowl that year 😢"
         return not_baby
     end
 
     if birth_year_data[:team_name] != team
         # different team won that year :/
-        puts "diff team won that year"
+        not_baby[:reason] = "The #{birth_year_data[:team_name]} won the Super Bowl that year. 😢"
         return not_baby
     end
 
-    # at this point we have a match
-    return {
-        result: true,
-        date: birth_year_data[:date],
-        team: birth_year_data[:team_name]
-    }
+    # at this point we know it's the same team and the same year
+    win_date =  Date.parse(birth_year_data[:date])
+    birthday_str = "#{data['month']}/#{data['day']}/#{data['year']}"
+    birth_date = Date.strptime birthday_str, "%m/%d/%Y"
+
+    num_days_diff = (birth_date - win_date).to_i
+
+    if num_days_diff > 250 and num_days_diff < 300
+        return {
+            result: true,
+            date: birth_year_data[:date],
+            team: birth_year_data[:team_name],
+            days_diff: num_days_diff
+        }
+    else
+        not_baby[:reason] = "But you were so close! Your team the #{team} won the year you were born, but your birthday is #{num_days_diff.abs} days away from the Super Bowl. The average pregnancy length is 280 days."
+        return not_baby
+    end
 end
 
 

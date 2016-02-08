@@ -11,7 +11,7 @@ $(function() {
             return;
         }
 
-        if($("#day").val() > 1 || $("#day").val() < 31){
+        if($("#day").val() < 1 || $("#day").val() > 31){
             $("#day").select();
 
             return;

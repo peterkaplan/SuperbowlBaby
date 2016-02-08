@@ -7,7 +7,7 @@ $(function() {
         var data = {
             year: $("#year").val(),
             month: $("#month").val(),
-            team: $("#team").val()
+            team: $(".team_select").val()
         };
         $.post("/check", data, function(resp) {
             if(resp.result) {

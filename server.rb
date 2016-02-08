@@ -1,3 +1,4 @@
+
 load 'data.rb'
 require 'nyny'
 
@@ -8,6 +9,7 @@ class App < NYNY::App
     end
 
     post '/check' do
+
         return render json: not_baby(params)
     end
 end

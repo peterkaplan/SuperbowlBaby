@@ -1,7 +1,6 @@
 body {
     font-family: 'Oswald', sans-serif;
-     margin: auto;
-
+    margin: auto;
 }
 
 h1 {
@@ -43,4 +42,10 @@ label{
 
 .find {
 	padding-top: 50px;
+}
+#footer {
+  position: fixed;
+  bottom: 5px;
+  left: 44%;
+  text-align: center;
 }

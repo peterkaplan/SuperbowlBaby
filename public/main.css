@@ -98,3 +98,8 @@ label{
 
 	color:#FF6961;
 }
+@media (max-width:1200px){
+  #go {
+    margin-bottom: 80px;
+  }
+}

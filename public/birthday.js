@@ -3,7 +3,9 @@ $(function() {
     setTimeout(function() {
         $(".twitter-share-button").css('margin-bottom', '-5px');
         $(".twitter-share-button").css('margin-left', '10px');
-    }, 1000);
+    }, 1500);
+
+    $(".team_select").dropdown();
 
     $('#day').keypress(function(e) {
     if (e.which == 13) {

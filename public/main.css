@@ -1,7 +1,6 @@
 body {
     font-family: 'Oswald', sans-serif;
-     margin: auto;
-
+    margin: auto;
 }
 
 h1 {
@@ -37,4 +36,11 @@ label{
   top: 30%;
   left:50%;
   transform: translate(-50%,-50%);
+}
+
+#footer {
+  position: fixed;
+  bottom: 5px;
+  left: 44%;
+  text-align: center;
 }

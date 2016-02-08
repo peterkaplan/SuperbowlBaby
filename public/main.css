@@ -102,4 +102,12 @@ label{
   #go {
     margin-bottom: 80px;
   }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  label {
+    font-size: 22px;
+  }
 }

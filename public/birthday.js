@@ -53,7 +53,7 @@ $(function() {
 
             year: $("#year").val(),
             month: $("#month").val(),
-            team: $(".team_select").val(),
+            team: $("#drop").val(),
             day: $("#day").val()
         };
         $.post("/check", data, function(resp) {

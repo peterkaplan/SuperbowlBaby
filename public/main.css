@@ -1,5 +1,7 @@
 body {
     font-family: 'Oswald', sans-serif;
+     margin: auto;
+
 }
 
 h1 {
@@ -21,8 +23,12 @@ p {
 
 }
 .column{
-
 	width: 45%;
-	display: inline;
+	display: inline-block;
+}
+
+label{
+	font-size: 20px;
+
 }
 

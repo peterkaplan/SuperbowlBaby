@@ -23,6 +23,10 @@ p {
   display: none;
 }
 
+#drop{
+	margin-top: 20px;
+}
+
 .info-container{
 		text-align: center;
 	    margin: auto;
@@ -48,9 +52,11 @@ label{
 
 }
 .date{
-		width: 30%;
+	width: 10%;
 	margin: auto;
+	display: inline;
 }
+
 .vertical-center {
   top: 37%;
   left:50%;
@@ -59,10 +65,15 @@ label{
 
 .find {
 	margin: auto;
+	padding-bottom: 50px;
 }
-#footer {
+.footer {
+  position: absolute;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 10px;
+}
 
-}
 
 .baby{
 	width:100%;
@@ -77,4 +88,5 @@ label{
 }
 #fb_baby{
 	text-align: center;
+	padding-bottom: 40px;
 }

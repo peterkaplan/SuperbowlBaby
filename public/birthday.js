@@ -12,10 +12,10 @@ $(function() {
     });
 
     // add team options
-  for( index in data )
-        {
-          $('#drop').append('<li class="dropdown"><a href="#">' + data[index] +' </a></li>');
-
-        }
+    var select_html = $("#drop").html();
+    for(var i = 0; i < data.length; i++) {
+        select_html += "<option>"+data[i]+"</option>";
+    }
+    $("#drop").html(select_html);
 });
 

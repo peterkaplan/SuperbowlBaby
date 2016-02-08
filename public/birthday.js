@@ -59,6 +59,7 @@ $(function() {
                 // football baby!
                 $("#team").html(resp.team);
                 $("#date").html(resp.date);
+                $("#num_diff").html(resp.days_diff);
                 $("#fb_baby").show(300);
             }
             else {

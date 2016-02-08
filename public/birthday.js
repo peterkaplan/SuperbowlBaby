@@ -6,14 +6,13 @@ $(function() {
     });
 
     $("#go").click(function() {
-        if ($('#drop').val() === "Teams") {
-            $("#drop").select();
-
+        if($("#month").val() > 12 || $("#month").val() < 1){
+            $("#month").select();
             return;
         }
 
-        if($("#month").val() > 12 || $("#month").val() < 1){
-            $("#month").select();
+        if($("#day").val() < 1 || $("#day").val() > 31){
+            $("#day").select();
 
             return;
         }

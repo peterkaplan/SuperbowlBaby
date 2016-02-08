@@ -16,11 +16,17 @@ p {
 }
 
 .info-container{
-
 		text-align: center;
 	    margin: auto;
-
 }
+
+#loader {
+  display: none;
+  text-align: center;
+  margin: auto;
+  width: 40px;
+}
+
 .column{
 	width: 30%;
 	 margin: auto;

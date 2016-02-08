@@ -13,6 +13,12 @@ class App < NYNY::App
         result
     end
 
+    post '/check_date' do
+        result = verify_date(params)
+        result = result.to_json
+        result
+    end
+
     get '*' do
         redirect_to '/'
     end

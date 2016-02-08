@@ -111,4 +111,12 @@ label{
   label {
     font-size: 22px;
   }
+
+  .date {
+    width: 80px;
+  }
+}
+
+#team_div {
+  display:none;
 }

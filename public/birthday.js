@@ -24,55 +24,95 @@ $(function() {
     });
 
     $(".try_again").click(function() {
+        $("#go").attr("check", "birth");
         $("#not_fb_baby").hide();
-        $(".info-container").show(300);
+        $("#fb_baby").hide();
+
+        $("#team_div").hide();
+        $("#birth_div, #go").show(300);
+    });
+
+    $("#check_birth").click(function() {
     });
 
     $("#go").click(function() {
-        if($("#month").val() > 12 || $("#month").val() < 1){
+        var month = parseInt($("#month").val, 10);
+        var day = parseInt($("#day").val, 10);
+        var year = parseInt($("#year").val, 10);
+        if(month > 12 || month < 1){
             $("#month").select();
             return;
         }
 
-        if($("#day").val() < 1 || $("#day").val() > 31){
+        if(day < 1 || day > 31){
             $("#day").select();
-
             return;
         }
 
-        if($("#year").val() > 2016 || $("#year").val() < 1900){
+        if(year > 2016 || year < 1900){
             $("#year").select();
             return;
         }
-     
-        $(".info-container").hide();
-        $("#loader").show();
-        $("#loader").css("display", "block");
 
-        var data = {
+        var go_button = $(this);
 
-            year: $("#year").val(),
-            month: $("#month").val(),
-            team: $("#drop").val(),
-            day: $("#day").val()
-        };
-        $.post("/check", data, function(resp) {
-            resp = JSON.parse(resp);
-            console.log(resp);
-            $("#loader").hide();
-            if(resp.result) {
-                // football baby!
-                $("#team").html(resp.team);
-                $("#date").html(resp.date);
-                $("#num_diff").html(resp.days_diff);
-                $("#fb_baby").show(300);
-            }
-            else {
-                // not a football baby :(
-                $("#not_fb_baby").show(300);
-                $("#not_reason").html(resp.reason);
-            }
-        });
+        if($(this).attr("check") == "birth") {
+            var data = {
+                year: $("#year").val(),
+                month: $("#month").val(),
+                day: $("#day").val()
+            };
+            $("#birth_div, #go").hide();
+            $("#loader").show();
+            $("#loader").css("display", "block");
+
+            $.post('/check_date', data, function(resp) {
+                resp = JSON.parse(resp);
+                console.log(resp);
+                $("#loader").hide();
+                if(resp.result) {
+                    // they're close
+                    $("#team_div, #go").show(300);
+                    go_button.attr("check", "team");
+                }
+                else {
+                    $("#not_fb_baby").show(300);
+                    $("#not_reason").html(resp.reason);
+                    go_button.attr("check", "birth");
+                }
+            });
+        }
+        else {
+            $("#team_div, #go").hide();
+            $("#loader").show();
+            $("#loader").css("display", "block");
+
+            var data = {
+                year: $("#year").val(),
+                month: $("#month").val(),
+                team: $("#drop").val(),
+                day: $("#day").val()
+            };
+            var go_button = $(this);
+            $.post("/check", data, function(resp) {
+                resp = JSON.parse(resp);
+                console.log(resp);
+                $("#loader").hide();
+                if(resp.result) {
+                    // football baby!
+                    $("#team").html(resp.team);
+                    $("#date").html(resp.date);
+                    $("#num_diff").html(resp.days_diff);
+                    $("#fb_baby").show(300);
+                }
+                else {
+                    // not a football baby :(
+                    $("#not_fb_baby").show(300);
+                    $("#not_reason").html(resp.reason);
+                }
+                go_button.attr("check", "birth");
+            });
+        }
     });
 
     // add team options

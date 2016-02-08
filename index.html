@@ -46,35 +46,36 @@
         <h3> You're a Super Bowl baby!</h3>
         <h3>The <span id="team"></span> won in <span id="date"></span></h3>
         <h3>Your birthday is <span id="num_diff"></span> days away from the Super Bowl that year.</h3>
-        <h3>The average prengancy length is 280 days.</h3>
+        <h3>The average prengancy lasts 280 days.</h3>
         <button type="button" class="btn btn-info btn-lg try_again">Try Again</button>
       </div>
      </div>
 
      <div id="not_fb_baby">
         <h2 id = "no">AWW... </h2>
-        <h3>You're not a Superbowl baby 😩</h3>
+        <h3>You're probably not a Superbowl baby 😩</h3>
         <h3 id="not_reason"></h3>
         <button type="button" class="btn btn-info btn-lg try_again">Try Again</button>
      </div>
 
 
      <div class="info-container">
-        <div class="column">
-           <label>What is your parents' favorite team? </label> </br>
-           
-           <select id="drop">
-           </select>
-        </div>
-        <div class="column">
+        <div id="birth_div" class="column">
            <label>What's your birthday?</label> </br>
            <input name="birth_month" placeholder="MM" type="number" min="01" max="12" class="form-control input-md date" maxlength="2" required="" id="month">
             <input placeholder="DD" type="number" min="1" ="30" class="form-control input-md date" maxlength="4"  required="" id="day">
            <input placeholder="YYYY" type="number" min="1900" ="2015" class="form-control input-md date" maxlength="4"  required="" id="year">
   
         </div>
+
+        <div id="team_div" class="column">
+           <label>You might be a Super Bowl baby! What's your parents' favorite team?</label> </br>
+           <select id="drop">
+           </select>
+        </div>
+
        <div class = "find">
-          <button type="button" id="go" class="btn btn-info btn-lg">Find Out</button>
+          <button type="button" id="go" check="birth" class="btn btn-info btn-lg">Find Out</button>
        </div>
       </div>
   </div>

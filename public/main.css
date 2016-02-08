@@ -13,7 +13,7 @@ h1 {
 }
 
 p {
-		text-align: center;
+	text-align: center;
 }
 
 .info-container{
@@ -32,3 +32,9 @@ label{
 
 }
 
+.vertical-center {
+    position: absolute;
+  top: 30%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}

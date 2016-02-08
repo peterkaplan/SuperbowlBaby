@@ -1,9 +1,23 @@
 var team_names = [ "Atlanta Falcons", "Baltimore Ravens", "Buffalo Bills", "Carolina Panthers", "Chicago Bears", "Cincinnati Bengals", "Cleveland Browns", "Dallas Cowboys", "Denver Broncos", "Detroit Lions", "Green Bay Packers", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Kansas City Chiefs", "Los Angeles Rams", "Miami Dolphins", "Minnesota Vikings", "New England Patriots", "New Orleans Saints", "New York Giants", "New York Jets", "Oakland Raiders", "Philadelphia Eagles", "Pittsburgh Steelers", "San Diego Chargers", "San Francisco 49ers", "Seattle Seahawks", "Tampa Bay Buccaneers", "Tennessee Titans", "Washington Redskins"];
 $(function() {
+
+
+    $('#day').keypress(function(e) {
+    if (e.which == 13) {
+        $("#go").click();
+    }
+    });
+     $('#month').keypress(function(e) {
+    if (e.which == 13) {
+        $("#go").click();
+    }
+    });
+      $('#year').keypress(function(e) {
+    if (e.which == 13) {
+        $("#go").click();
+    }
+    });
     $("#go").click(function() {
-
-
-      
 
         if($("#month").val() > 12 || $("#month").val() < 1){
             $("#month").select();
@@ -29,6 +43,7 @@ $(function() {
 
 
         var data = {
+
             year: $("#year").val(),
             month: $("#month").val(),
             team: $(".team_select").val()

@@ -11,6 +11,11 @@ h1 {
 
 }
 
+h2 {
+	text-align: center;
+    font-size: 100px;
+}
+
 p {
 	text-align: center;
 }
@@ -89,4 +94,7 @@ label{
 #fb_baby{
 	text-align: center;
 	padding-bottom: 40px;
+}
+#not_fb_baby{
+
 }

@@ -1,15 +1,17 @@
-var data =["Arizona Cardinals","Chicago Bears","Green Bay Packers","New York Giants","Detroit Lions","Washington Redskins","Philadelphia Eagles","Pittsburgh Steelers","Los Angeles Rams","San Francisco 49ers","Cleveland Browns","Indianapolis Colts","Dallas Cowboys","Kansas City Chiefs","San Diego Chargers","Denver Broncos","New York Jets","New England Patriots","Oakland Raiders","Tennessee Titans","Buffalo Bills","Minnesota Vikings","Atlanta Falcons","Miami Dolphins","New Orleans Saints","Cincinnati Bengals","Seattle Seahawks","Tampa Bay Buccaneers","Carolina Panthers","Jacksonville Jaguars","Baltimore Ravens","Houston Texans"]
+var data =["Chicago Bears","Green Bay Packers","New York Giants","Detroit Lions","Washington Redskins","Philadelphia Eagles","Pittsburgh Steelers","Los Angeles Rams","San Francisco 49ers","Cleveland Browns","Indianapolis Colts","Dallas Cowboys","Kansas City Chiefs","San Diego Chargers","Denver Broncos","New York Jets","New England Patriots","Oakland Raiders","Tennessee Titans","Buffalo Bills","Minnesota Vikings","Atlanta Falcons","Miami Dolphins","New Orleans Saints","Cincinnati Bengals","Seattle Seahawks","Tampa Bay Buccaneers","Carolina Panthers","Jacksonville Jaguars","Baltimore Ravens","Houston Texans"]
 $(function() {
     $("#go").click(function() {
 
 
-        if (!$("#drop option:selected").length) {
-                $("#drop").select();
+        if ($('#drop').val() === "Teams") {
+            $("#drop").select();
+
             return;
         }
 
         if($("#month").val() > 12 || $("#month").val() < 1){
             $("#month").select();
+
             return;
         }
 

@@ -15,6 +15,14 @@ p {
 	text-align: center;
 }
 
+#fb_baby {
+  display: none;
+}
+
+#not_fb_baby {
+  display: none;
+}
+
 .info-container{
 		text-align: center;
 	    margin: auto;
@@ -46,6 +54,7 @@ label{
   top: 37%;
   left:50%;
   transform: translate(-50%,-50%);
+  display: block;
 }
 
 .find {

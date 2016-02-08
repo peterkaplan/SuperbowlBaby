@@ -1,4 +1,3 @@
-
 load 'data.rb'
 require 'nyny'
 
@@ -9,8 +8,9 @@ class App < NYNY::App
     end
 
     post '/check' do
-
-        return render json: not_baby(params)
+        result = check_date(params)
+        result = result.to_json
+        result
     end
 end
 

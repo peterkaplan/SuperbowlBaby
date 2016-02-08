@@ -1,4 +1,4 @@
-var data =["Chicago Bears","Green Bay Packers","New York Giants","Detroit Lions","Washington Redskins","Philadelphia Eagles","Pittsburgh Steelers","Los Angeles Rams","San Francisco 49ers","Cleveland Browns","Indianapolis Colts","Dallas Cowboys","Kansas City Chiefs","San Diego Chargers","Denver Broncos","New York Jets","New England Patriots","Oakland Raiders","Tennessee Titans","Buffalo Bills","Minnesota Vikings","Atlanta Falcons","Miami Dolphins","New Orleans Saints","Cincinnati Bengals","Seattle Seahawks","Tampa Bay Buccaneers","Carolina Panthers","Jacksonville Jaguars","Baltimore Ravens","Houston Texans"]
+var team_names = ["Arizona Cardinals", "Atlanta Falcons", "Baltimore Ravens", "Buffalo Bills", "Carolina Panthers", "Chicago Bears", "Cincinnati Bengals", "Cleveland Browns", "Dallas Cowboys", "Denver Broncos", "Detroit Lions", "Green Bay Packers", "Houston Texans", "Indianapolis Colts", "Jacksonville Jaguars", "Kansas City Chiefs", "Los Angeles Rams", "Miami Dolphins", "Minnesota Vikings", "New England Patriots", "New Orleans Saints", "New York Giants", "New York Jets", "Oakland Raiders", "Philadelphia Eagles", "Pittsburgh Steelers", "San Diego Chargers", "San Francisco 49ers", "Seattle Seahawks", "Tampa Bay Buccaneers", "Tennessee Titans", "Washington Redskins"];
 $(function() {
     $("#go").click(function() {
 
@@ -32,19 +32,26 @@ $(function() {
             team: $(".team_select").val()
         };
         $.post("/check", data, function(resp) {
+            resp = JSON.parse(resp);
+            console.log(resp);
+            $("#loader").hide();
             if(resp.result) {
+                // football baby!
+                $("#team").html(resp.team);
+                $("#date").html(resp.date);
+                $("#fb_baby").show(300);
             }
             else {
-
+                // not a football baby :(
+                $("#not_fb_baby").show(300);
             }
         });
     });
 
     // add team options
     var select_html = $("#drop").html();
-    for(var i = 0; i < data.length; i++) {
-        select_html += "<option>"+data[i]+"</option>";
+    for(var i = 0; i < team_names.length; i++) {
+        select_html += "<option>"+team_names[i]+"</option>";
     }
     $("#drop").html(select_html);
 });
-

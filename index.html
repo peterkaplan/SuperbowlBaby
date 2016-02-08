@@ -27,9 +27,14 @@
      <img id="loader" src="public/ajax-loader.gif">
 
      <div id="fb_baby">
-        <img src="public/football_baby.jpg">
+      <div class="twocol">
+        <img class="baby" src="public/football_baby.jpg">
+      </div>
+      <div class="twocol">
         <h3>Congrats! You're a football baby!</h3>
         <h3>The <span id="team"></span> won in <span id="date"></span></h3>
+      </div>
+
      </div>
 
      <div id="not_fb_baby">
@@ -40,7 +45,7 @@
      <div class="info-container">
         <div class="column">
            <label>What's your parent's favorite team? </label> </br>
-           <div class="dropdown "  >
+           <div class="dropdown">
               <select type="button" class="team_select" id="drop" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                  <option>Arizona Cardinals<span class="caret"></span></option>
               </select>
@@ -48,8 +53,8 @@
         </div>
         <div class="column">
            <label>Birthday </label> </br>
-           <input name="birth_month" placeholder="MM" type="number" min="01" max="12" class="form-control input-md" maxlength="2" required="" id="month">
-           <input placeholder="YYYY" type="number" min="1900" ="2015" class="form-control input-md" maxlength="4"  required="" id="year">
+           <input name="birth_month" placeholder="MM" type="number" min="01" max="12" class="form-control input-md date" maxlength="2" required="" id="month">
+           <input placeholder="YYYY" type="number" min="1900" ="2015" class="form-control input-md date" maxlength="4"  required="" id="year">
         </div>
        <div class = "find">
           <button type="button" id="go" class="btn btn-info btn-lg">Find Out</button>

@@ -36,7 +36,6 @@ p {
 }
 
 .column{
-	width: 30%;
 	 margin: auto;
 
 	text-align: center;
@@ -45,15 +44,16 @@ p {
 }
 
 label{
-	font-size: 20px;
+	font-size: 30px;
 
 }
-
+.date{
+		width: 30%;
+	margin: auto;
+}
 .vertical-center {
-   position: absolute;
   top: 37%;
   left:50%;
-  transform: translate(-50%,-50%);
   display: block;
 }
 
@@ -62,4 +62,19 @@ label{
 }
 #footer {
 
+}
+
+.baby{
+	width:100%;
+
+}
+.twocol{
+	margin: auto;
+	text-align: center;
+	width: 40%;
+	display: inline-block;
+	height: 40%
+}
+#fb_baby{
+	text-align: center;
 }

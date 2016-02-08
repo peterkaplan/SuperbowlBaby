@@ -12,6 +12,10 @@ class App < NYNY::App
         result = result.to_json
         result
     end
+
+    get '*' do
+        redirect_to '/'
+    end
 end
 
 App.run!
